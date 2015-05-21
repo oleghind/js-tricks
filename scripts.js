@@ -43,6 +43,14 @@ a.test=0;
 console.log('a={}; a.test=0; a.hasOwnProperty("test");',a.hasOwnProperty("test") );
 console.log('a={}; a.test=0; a.hasOwnProperty("constructor");',a.hasOwnProperty("constructor") );
 console.log('a={}; a.test=0; a.hasOwnProperty("toString");', a.hasOwnProperty("toString") );
+console.log("%c Loop: ", "color:#4d90fe;");
+var a = [1,2,3,4];
+Array.prototype.getOne = function() {return 1;}
+console.log("var a = [1,2,3,4]; Array.prototype.getOne = function() {return 1;}", "for b in a");
+ for(b in a) {console.log(b); }
+ 	console.log("var a = [1,2,3,4]; Array.prototype.getOne = function() {return 1;}", "for b in a with if(a.hasOwnProperty(b))");
+ for(b in a) {if(a.hasOwnProperty(b))console.log(b); }
 
-
-
+ 	console.log("var a = [1,2,3,4]; Array.prototype.getOne = function() {return 1;};delete Array.prototype.getOne;", "for b in a");
+ delete Array.prototype.getOne;
+ for(b in a) {console.log(b); }
